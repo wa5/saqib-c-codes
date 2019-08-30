@@ -1,0 +1,19 @@
+#include<iostream>
+using namespace std;
+class name
+{
+	public:
+	name& dis1()
+	{
+		cout<<"hey whats up"<<endl;
+		return *this;
+	}
+	void dis2()
+	{
+		cout<<"hey you got it"<<endl;
+}
+};
+int main()
+{
+	name().dis1().dis2();
+}
