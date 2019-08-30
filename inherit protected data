@@ -1,0 +1,66 @@
+/*#include<iostream>
+using namespace std;
+class name
+{
+public:
+	int a;
+	string b;
+	void setdata()
+	{
+		a=10;
+		b="hey whats up";
+	}
+};
+class person:protected name//here all the public members of the class become protected data of the class persom
+{ public:
+	
+friend void passing(person);
+};
+void passing(person ab)
+{
+	//cout<<ab;
+cout<<ab.a<<ab.b<<endl;	
+}
+int main()
+{
+name nm;
+person pn;
+nm.setdata();
+passing(pn);
+}
+//here it is a wrong program we have done it a file called protected inheritence1.cpp
+*/
+#include<iostream>
+using namespace std;
+class name
+{
+public:
+	int a;
+	string b;
+	 name()
+	{
+		a=10;
+		b="hey whats up";
+	}
+};
+class person:protected name//here all the public members of the class become protected data of the class persom
+{
+	public:
+		name *ap;
+	person(name *ap)
+	{
+		this->ap=ap;
+	}
+	void display()
+	{
+	cout<<ap->a<<" "<<ap->b;
+	}
+friend void pass(person); 
+};
+//void pass(person *ap)
+int main()
+{
+name nm;
+person pn(&nm);
+pn.display();
+}
